@@ -32,38 +32,6 @@ export const userDelete = createAsyncThunk("users/userDelete", async (id) => {
   }
 });
 
-// const usersSlice = createSlice({
-//   name: "users",
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(usersFetch.pending, (state, action) => {
-//         state.status = "pending";
-//       })
-//       .addCase(usersFetch.fulfilled, (state, action) => {
-//         state.list = action.payload;
-//         state.status = "success";
-//       })
-//       .addCase(usersFetch.rejected, (state) => {
-//         state.status = "rejected";
-//       })
-//       .addCase(userDelete.pending, (state) => {
-//         state.deleteStatus = "pending";
-//       })
-//       .addCase(userDelete.fulfilled, (state, action) => {
-//         state.list = state.list.filter((user) => user._id !== action.payload._id);
-//         state.deleteStatus = "success";
-//         toast.error("User Deleted!", {
-//           position: "bottom-left",
-//         });
-//       })
-//       .addCase(userDelete.rejected, (state, action) => {
-//         state.deleteStatus = "rejected";
-
-//       });
-//   },
-// });
 const usersSlice = createSlice({
   name: "users",
   initialState,
