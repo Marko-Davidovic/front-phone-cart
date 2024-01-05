@@ -8,8 +8,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const { data, error, isLoading } = useGetAllProductsQuery();
-
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
     navigate("/cart");
@@ -21,7 +19,7 @@ const Home = () => {
         <>
           <h2>New Arrivals</h2>
           <div className="products">
-            {data &&
+            {Array.isArray(data) && data.length > 0 ? (
               data.map((product) => (
                 <div key={product._id} className="product">
                   <h3>{product.name}</h3>
@@ -34,13 +32,16 @@ const Home = () => {
                     Add To Cart
                   </button>
                 </div>
-              ))}
+              ))
+            ) : (
+              <p>No products available.</p>
+            )}
           </div>
         </>
       ) : status === "pending" ? (
         <p>Loading...</p>
       ) : (
-        <p>Unexpected error occured...</p>
+        <p>Unexpected error occurred...</p>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-export const url = "https://shy-rose-horse-hat.cyclic.app";
+export const url = "https://shy-rose-horse-hat.cyclic.app/api";
 
 export const setHeaders = () => {
   const headers = {
