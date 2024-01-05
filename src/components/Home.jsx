@@ -22,7 +22,7 @@ const Home = () => {
           <h2>New Arrivals</h2>
           <div className="products">
             {data &&
-              data?.map((product) => (
+              data.map((product) => (
                 <div key={product._id} className="product">
                   <h3>{product.name}</h3>
                   <img src={product.image?.url} alt={product.name} />
